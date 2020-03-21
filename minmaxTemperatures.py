@@ -35,8 +35,7 @@ maxResults = maxTemps.collect()
 print("min temperatures for each station in year 1800 are:")
 for result in minResults:
     print(result[0] + "\t{:.2f}F".format(result[1]))
-	
-	
+
 print("max temperatures for each station in year 1800 are:")
 for result in maxResults:
     print(result[0] + "\t{:.2f}F".format(result[1]))

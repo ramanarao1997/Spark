@@ -3,11 +3,13 @@ from pyspark import SparkConf, SparkContext
 conf = SparkConf().setMaster("local").setAppName("customerSpendings")
 sc = SparkContext(conf = conf)
 
+
 def getCustomerAndSpendings(line):
     row = line.split(',')
     custId = int(row[0])
     amount = float(row[2])
     return (custId, amount)
+
 
 lines = sc.textFile("./data/customer-orders.csv")
 parsedLines = lines.map(getCustomerAndSpendings)
